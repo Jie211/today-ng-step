@@ -1,27 +1,27 @@
-# TodayNgStep
+### 相关工具的版本
+```bash
+~  npm -v
+6.12.1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+~  node -v
+v12.10.0
 
-## Development server
+~  npm info @angular/cli
+@angular/cli@8.3.17 | MIT | deps: 20 | versions: 304
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 通过angular脚手架新建项目的时候
+`Additional parameters` 加上这个来支持less
+```bash
+--style less
+```
 
-## Code scaffolding
+### 追加ant
+```bash
+ng add ng-zorro-antd
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+? Add icon assets [ Detail: https://ng.ant.design/components/icon/en ] Yes
+? Set up custom theme file [ Detail: https://ng.ant.design/docs/customize-theme/en ] Yes
+? Choose your locale code: zh_CN
+? Choose template to create project: blank
+```
