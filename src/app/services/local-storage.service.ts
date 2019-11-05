@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 const ls = localStorage;
 
@@ -7,7 +7,8 @@ const ls = localStorage;
 })
 export class LocalStorageService {
 
-  constructor() { }
+  constructor() {
+  }
 
   public get<T>(key: string): any {
     return JSON.parse(ls.getItem(key)) as T;
@@ -19,7 +20,9 @@ export class LocalStorageService {
   }
 
   public set(key: string, value: any): void {
-    if (!value && value === undefined) { return; }
+    if (!value && value === undefined) {
+      return;
+    }
     const arr = JSON.stringify(value);
     ls.setItem(key, arr);
   }

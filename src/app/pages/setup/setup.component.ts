@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {INIT_FLAG, START_USING_DATE, USERNAME} from '../../services/local-storage.namespace';
 import {getTodayTime} from '../../../assets/utils/time';
@@ -13,7 +13,8 @@ export class SetupComponent implements OnInit {
 
   constructor(
     private store: LocalStorageService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
