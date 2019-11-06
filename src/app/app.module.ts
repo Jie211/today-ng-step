@@ -10,6 +10,7 @@ import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {AppRoutingModule} from './app-routing.module';
 import {SetupModule} from './pages/setup/setup.module';
+import {MainModule} from './pages/main/main.module';
 
 registerLocaleData(zh);
 
@@ -24,6 +25,7 @@ registerLocaleData(zh);
     HttpClientModule,
     AppRoutingModule,
     SetupModule,
+    MainModule,
     BrowserAnimationsModule
   ],
   providers: [{provide: NZ_I18N, useValue: zh_CN}],

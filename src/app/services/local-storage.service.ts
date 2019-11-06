@@ -2,9 +2,11 @@ import {Injectable} from '@angular/core';
 
 const ls = localStorage;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  {
+    providedIn: 'root'
+  }
+)
 export class LocalStorageService {
 
   constructor() {
@@ -26,4 +28,5 @@ export class LocalStorageService {
     const arr = JSON.stringify(value);
     ls.setItem(key, arr);
   }
+
 }
