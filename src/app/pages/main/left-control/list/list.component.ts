@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {NzDropdownContextComponent, NzDropdownService, NzModalService} from 'ng-zorro-antd';
+import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {NzContextMenuService, NzDropdownMenuComponent, NzModalService} from 'ng-zorro-antd';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {List} from '../../../../../domain/entities';
@@ -22,11 +22,10 @@ export class ListComponent implements OnInit, OnDestroy {
   addListModalVisible = false;
   renameListModalVisible = false;
 
-  private dropdown: NzDropdownContextComponent;
   private destroy$ = new Subject();
 
   constructor(
-    private dropdownService: NzDropdownService,
+    private dropdownService: NzContextMenuService,
     private listService: ListService,
     private todoService: TodoService,
     private modal: NzModalService
@@ -78,8 +77,8 @@ export class ListComponent implements OnInit, OnDestroy {
     });
   }
 
-  contextMenu($event: MouseEvent, template: TemplateRef<void>, uuid: string): void {
-    this.dropdown = this.dropdownService.create($event, template);
+  contextMenu($event: MouseEvent, menu: NzDropdownMenuComponent, uuid: string): void {
+    this.dropdownService.create($event, menu);
     this.contextListUuid = uuid;
   }
 
@@ -112,6 +111,6 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   close(): void {
-    this.dropdown.close();
+    this.dropdownService.close();
   }
 }

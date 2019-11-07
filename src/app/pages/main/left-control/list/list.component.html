@@ -22,7 +22,7 @@
       *ngFor="let list of lists"
       [nzSelected]="currentListUuid === list._id"
       (click)="click(list._id)"
-      (contextmenu)="contextMenu($event, contextTemplate, list._id)">
+      (contextmenu)="contextMenu($event, dropdown_menu, list._id)">
     <span>
       <i nz-icon nzType="bars" nzTheme="outline"></i>
       <span class="nav-text">{{ list.title }}</span>
@@ -30,7 +30,7 @@
   </li>
 </ul>
 
-<ng-template #contextTemplate>
+<nz-dropdown-menu #dropdown_menu>
   <ul nz-menu
       nzInDropDown
       nzSelectable
@@ -43,12 +43,11 @@
     <li nz-menu-divider></li>
     <li nz-menu-item
         (click)="delete()">
-      <i class="anticon anticon-delete anticon-right-margin danger"></i>
       <i nz-icon nzType="delete" nzTheme="outline" class="anticon-right-margin danger"></i>
       <span class="danger">删除列表</span>
     </li>
   </ul>
-</ng-template>
+</nz-dropdown-menu>
 
 <nz-modal [(nzVisible)]="addListModalVisible"
           [nzTitle]="'添加新列表'"
